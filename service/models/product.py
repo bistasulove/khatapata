@@ -40,6 +40,12 @@ class Product(models.Model):
     created_date = models.DateTimeField(auto_now_add=True)
     last_updated_date = models.DateTimeField(auto_now=True)
     is_active = models.BooleanField(default=True)
+    quantity_stock = models.DecimalField(
+        decimal_places=3, max_digits=12, null=True, blank=True
+    )
+    quantity_sold = models.DecimalField(
+        decimal_places=3, max_digits=12, null=True, blank=True
+    )
 
     class Meta:
         verbose_name_plural = "products"
